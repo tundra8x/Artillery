@@ -27,23 +27,18 @@ document.addEventListener('DOMContentLoaded', () => {
         logo.style.transform = 'scale(1)';
     });
 
-    // Add "fake loading" effect when clicking download button
-    const downloadButton = document.querySelector('.cta-button');
-    downloadButton.addEventListener('click', (e) => {
-        e.preventDefault();
-        downloadButton.style.cursor = 'wait';
-        downloadButton.textContent = 'Processing...';
-        
-        setTimeout(() => {
-            const status = document.querySelector('.status');
-            status.style.background = 'rgba(255,0,0,0.2)';
-            status.innerHTML = '❌ Error: Maximum user capacity reached. Please try again later.';
-            status.style.color = '#ff0000';
-            
-            downloadButton.style.cursor = 'not-allowed';
-            downloadButton.textContent = 'Download Now';
-        }, 2000);
-    });
+    // Roblox Executor Script
+
+    // Function to execute scripts
+    function executeScript(script) {
+        // Logic to execute Roblox scripts
+        console.log('Executing script:', script);
+        // Add your execution logic here
+    }
+
+    // Example usage
+    const exampleScript = 'print("Hello from Roblox!")';
+    executeScript(exampleScript);
 
     // Add particle effect background
     const particlesConfig = {
@@ -59,10 +54,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 value: '#00ff88'
             },
             opacity: {
-                value: 0.1
+                value: 0.1,
+                random: true
             },
             size: {
-                value: 3,
+                value: 2,
                 random: true
             },
             line_linked: {
@@ -74,11 +70,30 @@ document.addEventListener('DOMContentLoaded', () => {
             },
             move: {
                 enable: true,
-                speed: 2,
+                speed: 1.5,
                 direction: 'none',
                 random: true,
                 straight: false,
-                out_mode: 'out'
+                out_mode: 'out',
+                bounce: false
+            }
+        },
+        interactivity: {
+            detect_on: 'canvas',
+            events: {
+                onhover: {
+                    enable: true,
+                    mode: 'grab'
+                },
+                resize: true
+            },
+            modes: {
+                grab: {
+                    distance: 140,
+                    line_linked: {
+                        opacity: 0.3
+                    }
+                }
             }
         }
     };

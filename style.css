@@ -1,8 +1,8 @@
 body {
     margin: 0;
-    font-family: 'Segoe UI', Arial, sans-serif;
-    background: linear-gradient(135deg, #1a1a1a, #2a2a2a);
-    color: #fff;
+    font-family: 'Arial', sans-serif;
+    background-color: #E0E0E0;
+    color: #000;
     line-height: 1.6;
     overflow-x: hidden;
 }
@@ -19,15 +19,17 @@ body {
 header {
     text-align: center;
     padding: 60px 0;
+    background-color: #FF4F00;
+    color: #fff;
 }
 
 .logo {
     font-size: 48px;
     font-weight: bold;
-    color: #00ff88;
+    color: #fff;
     text-transform: uppercase;
     letter-spacing: 3px;
-    text-shadow: 0 0 10px rgba(0,255,136,0.5);
+    text-shadow: 0 0 10px rgba(255,255,255,0.5);
     animation: glow 2s ease-in-out infinite;
 }
 
@@ -46,6 +48,7 @@ header {
     transition: all 0.3s;
     opacity: 0;
     transform: translateY(20px);
+    border: 1px solid rgba(255,255,255,0.1);
 }
 
 .feature-card.visible {
@@ -56,19 +59,20 @@ header {
 .feature-card:hover {
     transform: translateY(-5px);
     background: rgba(255,255,255,0.08);
-    box-shadow: 0 5px 15px rgba(0,255,136,0.2);
+    box-shadow: 0 5px 15px rgba(255,255,255,0.2);
+    border: 1px solid rgba(255,255,255,0.2);
 }
 
 .feature-card h3 {
-    color: #00ff88;
+    color: #fff;
     margin-top: 0;
 }
 
 .cta-button {
     display: inline-block;
     padding: 15px 40px;
-    background: #00ff88;
-    color: #1a1a1a;
+    background-color: #00A2E0;
+    color: white;
     text-decoration: none;
     border-radius: 25px;
     font-weight: bold;
@@ -79,11 +83,13 @@ header {
     cursor: not-allowed;
     position: relative;
     overflow: hidden;
+    border: none;
 }
 
 .cta-button:hover {
-    background: #00cc6a;
+    background-color: #0078D7;
     transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(0,160,224,0.4);
 }
 
 .cta-button::after {
@@ -98,21 +104,21 @@ header {
     animation: shine 3s infinite;
 }
 
-.status {
-    background: rgba(255,0,0,0.1);
-    color: #ff3333;
-    padding: 10px 20px;
-    border-radius: 5px;
-    margin: 20px 0;
-    text-align: center;
-    animation: pulse 2s infinite;
-}
-
 footer {
     text-align: center;
     padding: 20px;
     margin-top: 50px;
     border-top: 1px solid rgba(255,255,255,0.1);
+    background-color: #333;
+    color: white;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.version-info {
+    color: #666;
 }
 
 @keyframes fadeInUp {
@@ -146,14 +152,20 @@ footer {
     }
 }
 
-@keyframes pulse {
-    0% {
-        transform: scale(1);
-    }
-    50% {
-        transform: scale(1.02);
-    }
-    100% {
-        transform: scale(1);
-    }
+ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+li {
+    margin: 10px 0;
+    padding-left: 25px;
+    position: relative;
+}
+
+li:before {
+    content: '▸';
+    position: absolute;
+    left: 0;
+    color: #fff;
 }
